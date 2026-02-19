@@ -34,32 +34,35 @@
 <body class="bg-indigo text-black">
     <?php include_once './assets/php/header.php'; ?>
 
-    <main class="mx-auto p-0 py-3">
-        <section id="alert" class="alert alert-danger text-center fs-5 d-none" role="alert"></section>
-        <form id="login">
+    <main>
+        <section class="login">
+            <div id="alert" class="alert alert-danger text-center fs-5 d-none" role="alert"></div>
+            <form id="login">
+    
+                <article>
+                    <label for="user" class="form-label text-indigo fw-bold user-select-none">Usuario</label>
+                    <input type="text" class="form-control input-brutus" required id="user">
+                </article>
+    
+                <article>
+                    <label for="pass" class="form-label text-indigo fw-bold user-select-none">Contraseña</label>
+                    <div class="d-flex flex-nowrap align-items-center">
+                        <input type="password" class="form-control input-brutus me-2" required id="pass">
+                        <span class="btn-brutus cursor-pointer" id="show">
+                            <i class="eye bi bi-eye-fill text-indigo"></i>
+                        </span>
+                    </div>
+                </article>
+    
+                <article class="form-check">
+                    <input type="checkbox" class="form-check-input check-indigo" id="check" value="hola">
+                    <label class="form-check-label cursor-pointer user-select-none" for="check">Mantener sesión activa</label>
+                </article>
+    
+                <button id="btn-submit" type="submit" class="btn-brutus btn-indigo">Ingresar</button>
+            </form>
+        </section>
 
-            <div>
-                <label for="user" class="form-label text-indigo fw-bold user-select-none">Usuario</label>
-                <input type="text" class="form-control input-brutus" id="user">
-            </div>
-
-            <div>
-                <label for="pass" class="form-label text-indigo fw-bold user-select-none">Contraseña</label>
-                <div class="d-flex flex-nowrap align-items-center">
-                    <input type="password" class="form-control input-brutus me-2" id="pass">
-                    <span class="btn-brutus cursor-pointer" id="show">
-                        <i class="eye bi bi-eye-fill text-indigo"></i>
-                    </span>
-                </div>
-            </div>
-
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input check-indigo" id="check" value="hola">
-                <label class="form-check-label cursor-pointer user-select-none" for="check">Mantener sesión activa</label>
-            </div>
-
-            <button id="btn-submit" type="submit" class="btn-brutus btn-indigo">Ingresar</button>
-        </form>
     </main>
 
     <?php include_once './assets/php/footer.php'; ?>

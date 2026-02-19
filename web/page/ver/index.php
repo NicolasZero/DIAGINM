@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/icons/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/table.css">
     <!-- datatables -->
     <link href="../../assets/css/bootstrap/datatables.min.css" rel="stylesheet">
     <link href="../../assets/css/bootstrap/datatables.buttons.css" rel="stylesheet">
@@ -63,24 +64,25 @@
 
 <body class="bg-indigo text-black">
     <div class="loader-page"></div>
+    <!-- header -->
     <?php $ruta='../../'; include_once '../../assets/php/header.php'; ?>
+
+    <!-- navbar -->
     <?php $ruta='../../'; include_once '../../assets/php/nav.php'; ?>
 
-
-    <main class="container p-0" style="background-color: #eee9e9;">
-
-        <h4 class="bg-indigo px-3 py-2 text-center">Tabla de registros generales</h4>
-        <!-- <h5 class="bg-secondary text-white px-3 py-1 text-center">Responsable de la Coordinación Estadal</h5> -->
-
-        <div class="row mx-3 py-3 overflow-auto">
-            <table id="example" class="table table-hover"></table>
-        </div>
-
+    <main>
+        <section class="table-box">
+            <h2 class="px-3 py-2 text-center fw-light">Tabla de registros generales</h2>
+            <!-- <h5 class="bg-secondary text-white px-3 py-1 text-center">Responsable de la Coordinación Estadal</h5> -->
+    
+            <div class="row mx-3 py-3 overflow-auto">
+                <table id="example" class="table table-hover"></table>
+            </div>
+        </section>
     </main>
 
+    <!-- footer -->
     <?php include_once '../../assets/php/footer.php'; ?>
-
-    <!-- <script src="../../assets/js/controller.ver.js" type="module"></script> -->
 
     <script type="module">
         import { getData } from "../../assets/js/controllers/ver.registro.js";

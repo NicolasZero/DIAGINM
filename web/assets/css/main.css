@@ -60,6 +60,11 @@
 }
 
 /* ========== Brutus ========== */
+a.btn-brutus{
+    text-decoration: none;
+    /* border-radius: 10px; */
+}
+
 .btn-brutus{
     border: none;
     padding: 0.5rem 1rem;
@@ -93,6 +98,33 @@
     cursor: pointer;
 }
 
+/* nav */
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 1rem;
+    border-bottom: var(--color-indigo-hover) solid 1px;
+}
+
+nav .btn-nav{
+    /* background-color: ; */
+    /* border: #000 solid 1px; */
+    border: var(--color-indigo-hover) solid 1px;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: var(--color-indigo);
+    color: #eee9e9;
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.3);
+}
+
+nav .btn-nav:hover{
+    color: #eee9e9;
+    transition: .4s;
+    box-shadow: none;
+    border-color: transparent;
+}
+
 /* Footer abajo */
 html {
   height: 100%; /* Asegura que el html ocupe todo el alto */
@@ -103,19 +135,17 @@ body{
     font-size: 18px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    /* gap: 1rem; */
 }
 
-footer{
-    align-self: ;
+main{
+    flex-grow: 2;
 }
 
 /* ========== HEADER ========== */
 header{
     max-height: 200px;
     background-color: #eee9e9;
-    color: #7030a0;
+    color: var(--color-indigo);
     display: flex;
     justify-content: space-between;
     align-items: center;
