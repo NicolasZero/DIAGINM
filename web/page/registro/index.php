@@ -8,26 +8,23 @@
     <title>Instrumento de Diagnostico</title>
     <!-- icon -->
     <link rel="icon" href="../../assets/img/logo_Inamujer.png" type="image/x-png">
-
-    <!-- loader -->
-    <link rel="stylesheet" href="../../assets/css/loader.css">
-
+    
     <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/loader.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/icons/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../../assets/css/theme.color.css">
-    <link rel="stylesheet" href="../../assets/css/tooltip.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/bootstrap/tooltip.css">
 
     <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/js/v1/form.v2.js" type="module"></script>
+    <script src="../../assets/js/helpers/jspdf_v2.5.1.min.js"></script>
+    <script src="../../assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../../assets/js/helpers/jquery.min.js"></script>
+    <script src="../../assets/js/controllers/form.js" type="module"></script>
 
 
     <script>
         const nologin = () => {
-            // const dominio = "http://127.0.0.1:5500/docs"
             location.replace("../../")
         }
 
@@ -43,43 +40,32 @@
 
 <body class="bg-indigo text-black">
     <div class="loader-page"></div>
+    <?php $ruta = '../../'; include_once '../../assets/php/header.php'; ?>
 
-    <div class="container p-0" style="background-color: #eee9e9;">
+    <nav class="bg-black text-white px-3 py-1 d-flex justify-content-between">
+        <div>
+            <div id="link-tablas" class="d-none">
+                <a  href="../ver" class="icon-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                    <i class="bi bi-table"></i>
+                    Tabla general
+                </a>
+                <a  href="../ver/estado/" class="ms-3 icon-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                    <i class="bi bi-table"></i>
+                    Matriz estado
+                </a>
+            </div>
+        </div>
+        <div>
+            <a href="../cerrar" class="icon-link icon-link-hover link-secondary">
+                Cerrar Sesión
+                <i class="bi bi-arrow-right"></i>
+                <!-- <i class="bi bi-door-closed"></i> -->
+            </a>
+        </div>
+    </nav>
+
+    <main class="container p-0" style="background-color: #eee9e9;">
         <form id="myform">
-            <div class="row m-0 p-0 align-items-center" style="height: 200px;background-color: #eee9e9;">
-                <div class="col-3">
-                    <img class="img-fluid" src="../../assets/img/logo_horizontal.png" alt="">
-                </div>
-                <div class="col-6">
-                    <h2 class="py-5 text-center">INSTRUMENTO DE DIAGNÓSTICO</h2>
-                </div>
-                <div class="col-3 text-end my-auto">
-                    <img class="rounded" style="max-height: 190px; width: auto; max-width: 100%;"
-                        src="../../assets/img/logo_Inamujer.png" />
-                </div>
-            </div>
-            <!-- navbar -->
-            <div class="bg-black text-white px-3 py-1 d-flex justify-content-between">
-                <div>
-                    <div id="link-tablas" class="d-none">
-                        <a  href="../ver" class="icon-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                            <i class="bi bi-table"></i>
-                            Tabla general
-                        </a>
-                        <a  href="../ver/estado/" class="ms-3 icon-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                            <i class="bi bi-table"></i>
-                            Matriz estado
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <a href="../cerrar" class="icon-link icon-link-hover link-secondary">
-                        Cerrar Sesión
-                        <i class="bi bi-arrow-right"></i>
-                        <!-- <i class="bi bi-door-closed"></i> -->
-                    </a>
-                </div>
-            </div>
             <div id="alert" class="alert alert-success text-center fs-5 d-none" role="alert">Registro realizado con exito</div>
 
 
@@ -1081,7 +1067,10 @@
                 <button type="submit" class="btn btn-indigo continue"><i class="bi-check-lg"></i> Enviar</button>
             </div>
         </form>
-    </div>
+    </main>
+
+    <?php include_once '../../assets/php/footer.php'; ?>
+
     <script>
         const user = JSON.parse(localStorage.getItem('inm-user'))
         if (user.rol == "administrador") {
