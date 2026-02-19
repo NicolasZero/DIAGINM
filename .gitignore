@@ -1,0 +1,12 @@
+# database configuration
+api/config/db.php
+
+# private data
+sql/private
+
+# logs
+logs/
+*.log
+
+# other files
+api_node/

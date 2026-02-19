@@ -1,0 +1,93 @@
+:root{
+    --color-indigo: #7030a0;
+    --color-indigo-hover: #431c61;
+    --color-light: #eee9e9;
+    --brutus-shadow-light: rgb(186 159 193);
+}
+
+.btn-indigo {
+    background-color: var(--color-indigo);
+    color: #fff;
+}
+
+.btn-indigo:hover {
+    background-color: var(--color-indigo-hover);
+    color: #fff;
+}
+
+.btn-indigo:disabled {
+    background-color: #875fa5;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.text-indigo{
+    color: var(--color-indigo);
+}
+
+.bg-indigo {
+    background-color: var(--color-indigo);
+    color: #fff;
+}
+
+.check-indigo{
+    background-color: #875fa5;
+}
+
+.check-indigo:checked {
+    background-color: var(--color-indigo);
+    border-color: var(--color-indigo);
+}
+
+.check-indigo:focus{
+    border-color: var(--color-indigo-hover);
+    outline:0;
+    box-shadow:0 0 0 .25rem #875fa5
+}
+
+.input-indigo{
+    border-color: var(--color-indigo);
+}
+
+.input-indigo:focus {
+    border-color: var(--color-indigo-hover);
+    outline:0;
+    box-shadow:0 0 0 .25rem #875fa5
+}
+
+.border-indigo{
+    border-color: var(--color-indigo);
+}
+
+/* brutus */
+.btn-brutus{
+    border: none;
+    padding: 0.5rem 1rem;
+    box-shadow: 10px 10px 0px 0px var(--brutus-shadow-light);
+}
+
+.btn-brutus:hover{
+    transition: .4s;
+    box-shadow: none;
+}
+
+.input-brutus{
+    border: none;
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    box-shadow: 10px 10px 0px 0px var(--brutus-shadow-light);
+}
+
+.input-brutus:hover{
+    transition: .4s;
+    box-shadow: none;
+}
+
+.input-brutus:focus {
+    outline:0;
+    box-shadow:0 0 0 .25rem #875fa5
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
