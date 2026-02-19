@@ -59,7 +59,7 @@
     border-color: var(--color-indigo);
 }
 
-/* brutus */
+/* ========== Brutus ========== */
 .btn-brutus{
     border: none;
     padding: 0.5rem 1rem;
@@ -88,6 +88,85 @@
     box-shadow:0 0 0 .25rem #875fa5
 }
 
+/* ========== Utils ========== */
 .cursor-pointer{
     cursor: pointer;
+}
+
+/* Footer abajo */
+html {
+  height: 100%; /* Asegura que el html ocupe todo el alto */
+}
+
+body{
+    min-height: 100vh;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* gap: 1rem; */
+}
+
+footer{
+    align-self: ;
+}
+
+/* ========== HEADER ========== */
+header{
+    max-height: 200px;
+    background-color: #eee9e9;
+    color: #7030a0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+header .mision{
+    max-height: 120px;
+    width: auto;
+    max-width: 100%;
+    /* box-shadow: 10px 10px 0px 0px var(--brutus-shadow-light); */
+}
+
+/* header .mision:hover{
+    transition: .4s;
+    box-shadow: none;
+    border: none;
+} */
+
+header .logo{
+    max-height: 150px;
+    width: auto;
+    max-width: 100%;
+    box-shadow: 10px 10px 0px 0px var(--brutus-shadow-light);
+}
+
+header .logo:hover{
+    transition: .4s;
+    box-shadow: none;
+}
+
+/* ========== FOOTER ========== */
+footer{
+    padding: 3px;
+    color: #eee9e9;
+    background-color: #1d0a1b;
+}
+
+/* ========== Responsive ========== */
+@media screen and (max-width: 768px) {
+    body { font-size: 16px; }
+    /* header */
+    header{
+        justify-content: space-around;
+    }
+    header .mision{
+       display: none;;
+    }
+    header .logo{
+        height: 20vh;
+        max-height: 150px;
+    }
+
 }

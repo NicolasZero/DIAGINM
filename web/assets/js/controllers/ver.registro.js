@@ -1,5 +1,6 @@
-import handleExportPDF from "../exportPDF.js";
-import {columns} from "../datatable.columns.js";
+import handleExportPDF from "../helpers/exportPDF.js";
+import {columns} from "../bootstrap/datatable.columns.js";
+import {HOSTNAME} from '../const/api.js';
 
 const spanishTranslation = {
     "decimal":        "",
@@ -23,7 +24,7 @@ const spanishTranslation = {
 export const generatePdf = async (id) => {
     try {
         // data.key = "n1c0145"
-        const response = await fetch(`http://localhost:3000/registro/id/${id}`, {
+        const response = await fetch(`${HOSTNAME}/registro/id/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +47,7 @@ export const generatePdf = async (id) => {
 
 export const getData = async () => {
     try {
-        const response = await fetch('http://localhost:3000/registro/', {
+        const response = await fetch(`${HOSTNAME}/registro/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

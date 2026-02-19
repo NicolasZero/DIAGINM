@@ -1,34 +1,30 @@
+import {HOSTNAME} from '../const/api.js';
+
 const showPass = () =>{
     const eye = document.querySelector('.eye')
     const pass = document.getElementById('pass')
-    // eye.addEventListener('click', () => {
-    //     const pass = document.getElementById('pass')
-        if (eye.classList.contains('bi-eye-fill')) {
-            eye.classList.remove('bi-eye-fill')
-            eye.classList.add('bi-eye-slash-fill')
-            pass.type = 'text'
-        } else {
-            eye.classList.remove('bi-eye-slash-fill')
-            eye.classList.add('bi-eye-fill')
-            pass.type = 'password'
-        }
-        // })
-        // eye.classList.remove('bi-eye-fill')
-        // eye.classList.add('bi-eye-slash-fill')
-    // pass.type = 'text'
+
+    if (eye.classList.contains('bi-eye-fill')) {
+        eye.classList.remove('bi-eye-fill')
+        eye.classList.add('bi-eye-slash-fill')
+        pass.type = 'text'
+    } else {
+        eye.classList.remove('bi-eye-slash-fill')
+        eye.classList.add('bi-eye-fill')
+        pass.type = 'password'
+    }
 }
 
 const verification = async () => {
+    const btn = document.getElementById("btn-submit")
+    btn.disabled = true
+    btn.innerHTML = 'Verificando...'
     try {
         const user = $("#user").val()
         const pass = $("#pass").val()
         const check = document.getElementById("check").checked
 
-        const btn = document.getElementById("btn-submit")
-        btn.disabled = true
-        btn.innerHTML = 'Verificando...'
-
-        const response = await fetch('http://localhost:3000/auth/', {
+        const response = await fetch(`${HOSTNAME}/auth/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,6 +33,7 @@ const verification = async () => {
         });
 
         const res = await response.json();
+
         if (res.data) {
             $("#alert").removeClass('alert-danger');
             $("#alert").addClass('alert-success');
@@ -70,3 +67,16 @@ const verification = async () => {
         console.error('Error:', error);
     }
 }
+
+const formulario = document.getElementById('login');
+
+formulario.addEventListener('submit', function (e) {
+    e.preventDefault();
+    verification();
+});
+
+const show = document.getElementById('show');
+
+show.addEventListener('click', () =>{
+    showPass()
+});
