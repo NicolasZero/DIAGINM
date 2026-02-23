@@ -3,34 +3,36 @@ main{
     justify-content: center;
     align-items: center;
 }
+
 .login{
     width: 50%;
-    min-width: 200px;
+    min-width: 300px;
     max-width: 600px;
     /* height: 100%; */
     /* margin: auto; */
     background-color: #eee9e9;
     box-shadow: 13px 13px 0px 0px rgba(0, 0, 0, 0.3);
-    padding: 1.5rem 0;
+    padding: 1.5rem;
+    /* border: solid 2px var(--color-indigo); */
+
 }
 
 .login form{
-    width: 80%;
+    /* width: 80%; */
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin: 20px auto;
+    gap: 1rem;
+    margin: auto;
 }
 
-.eye{
-    /* background-color: #ede0f5; */
-    font-size: 1.5rem;
-    /* border-radius: 10px; */
+.login form .form-check-label:hover{
+    color: var(--color-indigo)
 }
 
 /* Cambiar estilo para dispositivos con ancho de 768px o menos (tablets/móviles) */
 @media screen and (max-width: 768px) {
-    main {
+    .login {
         width: 90%;
+        padding: 1.5rem 1rem;
     }
 }

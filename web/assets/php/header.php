@@ -7,8 +7,7 @@
     <img class="mision" src="<?= $ruta ?>assets/img/logo_horizontal.png" alt="mision mujer">
     
     <h1 class="text-center fs-1">
-        <span class="fs-3">INTRUMENTO</span><br>
-        <span class="fs-5 ">DE</span><br>
+        INTRUMENTO DE<br>
         DIAGNÓSTICO
     </h1>
 

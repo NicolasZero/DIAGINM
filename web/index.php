@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="content-language" content="es" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesión</title>
+    <title>Inicio de sesión - Diaginm</title>
     <!-- icon -->
     <link rel="icon" href="./assets/img/logo_Inamujer.png" type="image/x-png">
 
@@ -22,6 +22,8 @@
     <script src="./assets/js/helpers/jspdf_v2.5.1.min.js"></script>
     <script src="./assets/js/bootstrap/bootstrap.min.js"></script>
 
+    <!-- Para evitar el cache agregar -->
+    <!-- <script src="app.js?v=1.0.1"></script> -->
     <script type="module" src="./assets/js/controllers/login.js"></script>
 
     <script>
@@ -36,7 +38,8 @@
 
     <main>
         <section class="login">
-            <div id="alert" class="alert alert-danger text-center fs-5 d-none" role="alert"></div>
+            <div id="alert" class="mb-3 mx-3 border-none msg msg-danger brutus-hover brutus-light text-center d-none" role="alert">
+            </div>
             <form id="login">
     
                 <article>
@@ -49,7 +52,7 @@
                     <div class="d-flex flex-nowrap align-items-center">
                         <input type="password" class="form-control input-brutus me-2" required id="pass">
                         <span class="btn-brutus cursor-pointer" id="show">
-                            <i class="eye bi bi-eye-fill text-indigo"></i>
+                            <i class="eye bi bi-eye-fill text-indigo fs-5"></i>
                         </span>
                     </div>
                 </article>

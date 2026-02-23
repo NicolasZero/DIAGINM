@@ -35,8 +35,8 @@ const verification = async () => {
         const res = await response.json();
 
         if (res.data) {
-            $("#alert").removeClass('alert-danger');
-            $("#alert").addClass('alert-success');
+            $("#alert").removeClass('msg-danger');
+            $("#alert").addClass('msg-success');
             $("#alert").html('Iniciando sesión...');
             $("#alert").removeClass('d-none');
             const rol = res.rol
@@ -44,22 +44,22 @@ const verification = async () => {
             location.href = './page/registro'
             // console.log(res.rol)
         } else {
-            $("#alert").removeClass('alert-success');
-            $("#alert").addClass('alert-danger');
+            $("#alert").removeClass('msg-success');
+            $("#alert").addClass('msg-danger');
             $("#alert").html(res.error);
             $("#alert").removeClass('d-none');
             btn.disabled = false
             btn.innerHTML = 'Ingresar'
-            setTimeout(() => {
-                $("#alert").addClass('d-none');
-            }, 3000);
+            // setTimeout(() => {
+            //     $("#alert").addClass('d-none');
+            // }, 3000);
             // console.log(res);
         }
         // const data = res.data
 
     } catch (error) {
-        $("#alert").removeClass('alert-success');
-        $("#alert").addClass('alert-danger');
+        $("#alert").removeClass('msg-success');
+        $("#alert").addClass('msg-danger');
         $("#alert").html('No se logro conectar con el servidor');
         $("#alert").removeClass('d-none');
         btn.disabled = false

@@ -24,7 +24,7 @@ async function loadImages() {
     try {
         imagen1 = await toBase64('https://th.bing.com/th/id/OIP.N1HgJ7u7uFxu69myO4t8FwHaCx?rs=1&pid=ImgDetMain');
         imagen2 = await toBase64('https://3.bp.blogspot.com/-9fKARIk6pVQ/Vvgp8HHgooI/AAAAAAAAABo/Jze4savfueUIinmwLdvoLo9J17sBL3__w/s1600/inamujer.jpg');
-        console.log('Images loaded');
+        // console.log('Images loaded');
     } catch (error) {
         console.error('Error loading images:', error);
     }

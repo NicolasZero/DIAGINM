@@ -2,15 +2,22 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem .5rem;
 }
 
 .table-box{
     background-color: #eee9e9;
-    width: 80%;
+    width: 90%;
     height: 80%;
     box-shadow: 13px 13px 0px 0px rgba(0, 0, 0, 0.3);
 }
 
 .table-box h2{
     color: #7030a0;;
+}
+
+.table th{
+    background-color: var(--color-indigo) !important;
+    color: #eee9e9;
+    font-size: 1.1rem;
 }

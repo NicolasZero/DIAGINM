@@ -42,27 +42,8 @@
     <div class="loader-page"></div>
     <?php $ruta = '../../'; include_once '../../assets/php/header.php'; ?>
 
-    <nav class="bg-black text-white px-3 py-1 d-flex justify-content-between">
-        <div>
-            <div id="link-tablas" class="d-none">
-                <a  href="../ver" class="icon-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <i class="bi bi-table"></i>
-                    Tabla general
-                </a>
-                <a  href="../ver/estado/" class="ms-3 icon-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    <i class="bi bi-table"></i>
-                    Matriz estado
-                </a>
-            </div>
-        </div>
-        <div>
-            <a href="../cerrar" class="icon-link icon-link-hover link-secondary">
-                Cerrar Sesión
-                <i class="bi bi-arrow-right"></i>
-                <!-- <i class="bi bi-door-closed"></i> -->
-            </a>
-        </div>
-    </nav>
+    <?php $ruta = '../../'; include_once '../../assets/php/nav.php'; ?>
+
 
     <main class="container p-0" style="background-color: #eee9e9;">
         <form id="myform">
@@ -1078,7 +1059,7 @@
         }
         // console.log(user)
     </script>
-    <script src="../../assets/js/tooltip.js"></script>
+    <script src="../../assets/js/bootstrap/tooltip.js"></script>
 </body>
 
 

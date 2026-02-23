@@ -1,3 +1,3 @@
-# Api en PHP #
+# Sistema de Diagnostico #
 
-Una **API REST** hecha con **PHP** puro.
+Una aplicaion para registrar

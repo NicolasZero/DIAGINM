@@ -1,4 +1,4 @@
-import handleExportPDF from "../exportPDF.js";
+import handleExportPDF from "../helpers/exportPDF.js";
 
 window.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('#myform')

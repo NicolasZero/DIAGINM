@@ -56,7 +56,7 @@ export const getData = async () => {
         const json = await response.json();
         const data = json.data
         // console.log(JSON.stringify(json));
-        console.log(data)
+        // console.log(data)
         $('#example').DataTable({
             language: spanishTranslation,
             layout: {
