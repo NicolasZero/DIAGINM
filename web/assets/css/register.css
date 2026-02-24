@@ -33,16 +33,18 @@
 
 /* input[type="text"]:invalid:not(:focus),
 input[type="email"]:invalid:not(:focus) */
-input[type="text"]:invalid:focus,
+/* input[type="text"]:invalid:focus,
 input[type="email"]:invalid:focus
 {
     background-color: var(--color-secundario-light);
     border: 1px solid var(--color-secundario-hover)
+} */
+
+.register section label:has(:invalid:focus) input{
+    background-color: var(--color-secundario-light);
+    border: 1px solid var(--color-secundario-hover)
 }
 
-/* input[type="text"]:valid:not(:focus),
-input[type="email"]:valid:not(:focus)
-{
-    background-color: #d1e7dd;
-    border: 1px solid #badbcc;
-} */
+.register section label:has(:invalid:focus){
+    color: var(--color-secundario-hover);
+}

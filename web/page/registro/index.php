@@ -56,8 +56,9 @@
 
 
                     <div class="col-lg-4 mb-3 tooltip-custom">
-                        <label for="input1-1" class="form-label">Nombre(s):</label>
-                        <input type="text" class="form-control input-brutus" id="input1-1" name="nombre" required>
+                        <label class="">Nombre(s):
+                            <input type="text" class="input-brutus"  name="nombre" required>
+                        </label>
                         <span class="tooltip-text">Campo requerido</span>
                     </div>
 
