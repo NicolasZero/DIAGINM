@@ -1,0 +1,48 @@
+/* main{
+
+} */
+
+.register {
+    margin: auto;
+    width: 90%;
+    /* padding: 1rem .5rem; */
+}
+
+.register > section{
+    background-color: var(--color-main);
+    box-shadow: 13px 13px 0px 0px rgba(0, 0, 0, 0.3);
+    margin: 15px auto;
+}
+
+.register h2{
+    background-color: var(--color-secundario);
+    color: #fff;
+    padding: 5px ;
+    /* margin: 0; */
+    /* padding: 0.5rem; */
+}
+
+.register h3{
+    /* background-color: var(--color-primario-light); */
+    color: var(--color-primario);
+}
+
+.register section label{
+    color: var(--color-primario-hover);
+}
+
+/* input[type="text"]:invalid:not(:focus),
+input[type="email"]:invalid:not(:focus) */
+input[type="text"]:invalid:focus,
+input[type="email"]:invalid:focus
+{
+    background-color: var(--color-secundario-light);
+    border: 1px solid var(--color-secundario-hover)
+}
+
+/* input[type="text"]:valid:not(:focus),
+input[type="email"]:valid:not(:focus)
+{
+    background-color: #d1e7dd;
+    border: 1px solid #badbcc;
+} */

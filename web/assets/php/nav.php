@@ -4,32 +4,31 @@
     </button>
 
     <section class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul id="link-tablas" class="navbar-nav me-auto mb-2 mb-lg-0 d-nonee text-white">
+        <ul id="link-tablas" class="navbar-nav me-auto px-3 d-none text-white">
             <li class="nav-item">
-                <a href="../registro" class="nav-link">
+                <a href="../registro" class="nav-link registro">
                     <i class="bi bi-file-text"></i>
                     Registro
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="../ver" class="nav-link">
+                <a href="../ver" class="nav-link ver-general">
                     <i class="bi bi-table"></i>
                     Tabla general
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="../ver/estado/" class="nav-link">
+                <a href="../ver/estado/" class="nav-link ver-estado">
                     <i class="bi bi-table"></i>
                     Matriz estado
                 </a>
             </li>
         </ul>        
     </section>
-    <a href="../cerrar" class="nav-link text-indigo">
+    <a href="../cerrar" class="cerrar">
         Cerrar Sesión
         <i class="bi bi-arrow-right"></i>
     </a>
-    <!-- </div> -->
 </nav>

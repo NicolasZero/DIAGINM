@@ -65,29 +65,29 @@ export const getData = async () => {
                 }
             },
             data: data,
-            columns: columns,
-            // [
-            //     // {
-            //     //     data: 'nombre',
-            //     //     // visible:false
-            //     //     // title: 'nombre'
-            //     // },
-            //     // {
-            //     //     data: 'apellido',
-            //     //     // title: 'apellido'
-            //     // },
-            //     // {
-            //     //     data: 'estado_id',
-            //     //     // title: 'estado'
-            //     // },
-            //     // {
-            //     //     data: 'sede_id',
-            //     //     // title: 'sede'
-            //     // },
-            //     // {
-            //     //     title: ''
-            //     // }
-            // ],
+            columns:
+            [
+                {
+                    data: 'nombre',
+                    // visible:false
+                    title: 'Nombre'
+                },
+                {
+                    data: 'apellido',
+                    title: 'Apellido'
+                },
+                {
+                    data: 'estado_id',
+                    title: 'Estado'
+                },
+                {
+                    data: 'sede_id',
+                    title: 'Sede'
+                },
+                {
+                    title: ''
+                }
+            ],
             columnDefs: [
                 // { targets: [0,3], visible: true },
                 {
@@ -97,9 +97,9 @@ export const getData = async () => {
                     render: function (data, type, row, meta) {
                         let fila = meta.row;
                         let botones = `
-                <button id="hello" class='btn btn-indigo btn-circle hello' data-id="${row.id}">
-                    <i class="bi bi-download"></i>
-                </button>`;
+                            <button id="hello" class='btn btn-indigo btn-circle hello' data-id="${row.id}">
+                                <i class="bi bi-download"></i>
+                            </button>`;
                         return botones;
                     }
                 }
@@ -115,15 +115,14 @@ export const getData = async () => {
         });
     }
     catch (error) {
-        console.error('Error:', error);
-        if(error){
-            $('#example').append('<div class="alert alert-danger text-center" role="alert">Error al cargar los datos</div>');
-            return 
-        }
+        let msg = 'Error al cargar los datos'
         if(!data){
-            $('#example').append('<div class="alert alert-danger text-center" role="alert">No hay datos</div>');
+            msg = 'No hay datos'
         }
-       
+        $('#example').append(`<div class="mx-3 msg msg-danger text-center brutus-light" role="alert">${msg}</div>`);
+
+        
+        return console.error('Error:', error);
        
     }
 }

@@ -8,5 +8,8 @@ sql/private
 logs/
 *.log
 
+# apache
+.htaccess
+
 # other files
 api_node/

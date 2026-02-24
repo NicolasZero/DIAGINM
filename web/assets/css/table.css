@@ -16,8 +16,68 @@ main{
     color: #7030a0;;
 }
 
+/* tabla */
 .table th{
-    background-color: var(--color-indigo) !important;
+    background-color: var(--color-primario) !important;
     color: #eee9e9;
     font-size: 1.1rem;
+}
+
+/* Buscador */
+.dt-search > input{
+    border: none;
+    border-radius: 0;
+    margin-bottom: 5px;
+    padding: 0.5rem 1rem;
+    box-shadow: 10px 10px 0px 0px var(--box-shadow-light);
+}
+
+.dt-search > input:hover{
+    transition: .4s;
+    box-shadow: none;
+}
+
+.dt-search > input:focus {
+    outline:0;
+    box-shadow: none;
+}
+
+/* boton de exportar */
+div.dt-buttons > .dt-button{
+    background: var(--color-secundario);
+    margin: auto .5rem;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    box-shadow: 13px 13px 0px 0px var(--box-shadow-light);
+}
+
+div.dt-buttons > .dt-button:hover:not(.disabled){
+    transition: .4s;
+    border: none;
+    box-shadow: none;
+    background: var(--color-secundario-hover);
+}
+
+.dt-paging-button .page-link{
+    background-color: var(--color-secundario-light);
+    color: #000;
+    border: none;
+}
+
+.dt-paging-button:hover .page-link{
+    background-color: var(--color-secundario);
+    color: #fff;
+}
+
+/* Cambiar estilo para dispositivos con ancho de 768px o menos (tablets/móviles) */
+@media screen and (max-width: 768px) {
+    main{
+        padding: 0 .5rem;
+    }
+    .table-box {
+        width: 100%;
+        padding: 1rem .5rem;
+        box-shadow: none;
+    }
 }

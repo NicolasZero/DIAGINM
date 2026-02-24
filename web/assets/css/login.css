@@ -6,27 +6,25 @@ main{
 
 .login{
     width: 50%;
-    min-width: 300px;
-    max-width: 600px;
-    /* height: 100%; */
-    /* margin: auto; */
+    height: 100%;
+    padding: 1.5rem;
+    margin: auto;
+    min-height: 325px;
+    color: #000;
     background-color: #eee9e9;
     box-shadow: 13px 13px 0px 0px rgba(0, 0, 0, 0.3);
-    padding: 1.5rem;
-    /* border: solid 2px var(--color-indigo); */
-
-}
-
-.login form{
-    /* width: 80%; */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 1rem;
-    margin: auto;
 }
 
-.login form .form-check-label:hover{
-    color: var(--color-indigo)
+.login .form-check-label:hover{
+    color: var(--color-secundario)
+}
+
+.login:has(.form-check-input:checked) .form-check-label {
+    color: var(--color-secundario);
 }
 
 /* Cambiar estilo para dispositivos con ancho de 768px o menos (tablets/móviles) */
