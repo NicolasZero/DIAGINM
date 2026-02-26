@@ -48,42 +48,46 @@
 
     <main>
         <form id="myform" class="register">
-            <article id="alert" class="msg msg-success text-center fs-5 d-none" role="alert">Registro realizado con exito</article>
+            <div id="alert" class="msg msg-success text-center fs-5 d-none" role="alert">Registro realizado con exito</div>
 
             <section class="row">
                 <h2 class="text-center">COORDINACIÓN ESTADAL</h2>
                 <h3 class="text-center">Responsable de la Coordinación Estadal</h3>
 
-
-                    <div class="col-lg-4 mb-3 tooltip-custom">
-                        <label class="">Nombre(s):
-                            <input type="text" class="input-brutus"  name="nombre" required>
+                    <div class="col-lg-4 mb-3">
+                        <label class="px-2">Nombre(s):
+                            <input type="text" class="input-brutus" name="nombre" maxlength="40" required title="Solo letras" pattern="[A-Za-z\s]+">
                         </label>
-                        <span class="tooltip-text">Campo requerido</span>
+                        <div class="validation-msg" role="alert">Este campo es requerido</div>
                     </div>
 
-                    <div class="col-lg-4 mb-3 tooltip-custom">
-                        <label for="input1-2" class="form-label">Apellido(s):</label>
-                        <input type="text" class="form-control input-brutus" id="input1-2" name="apellido" required>
-                        <span class="tooltip-text">Campo requerido</span>
+                    <div class="col-lg-4 mb-3">
+                        <label class="px-2">Apellido(s):
+                            <input type="text" class="input-brutus" name="apellido" maxlength="40" required>
+                        </label>
+                        <div class="validation-msg">Campo requerido</div>
                     </div>
 
-                    <div class="col-lg-4 mb-3 tooltip-custom">
-                        <label for="input1-3" class="form-label">Cédula de identidad:</label>
-                        <input type="text" class="form-control input-brutus" id="input1-3" name="cedula" required>
-                        <span class="tooltip-text">Campo requerido</span>
+                    <div class="col-lg-4 mb-3">
+                        <label class="px-2">Cédula de identidad:
+                            <input type="text" class="input-brutus" name="cedula" maxlength="40" required>
+                        </label>
+                        <div class="validation-msg">Campo requerido</div>
                     </div>
 
-                    <div class="col-lg-6 mb-3 tooltip-custom">
-                        <label for="input1-4" class="form-label">Teléfono:</label>
-                        <input type="text" class="form-control input-brutus" id="input1-4" name="telefono" required>
-                        <span class="tooltip-text">Campo requerido</span>
+                    <div class="col-lg-6 mb-3">
+                        <label class="px-2">Teléfono:
+                            <input type="text" class="input-brutus" name="telefono" maxlength="12" required>
+                        </label>
+                        <div class="validation-msg">Campo requerido</div>
                     </div>
 
-                    <div class="col-lg-6 mb-3 tooltip-custom">
-                        <label for="input1-5" class="form-label">Correo Electrónico:</label>
-                        <input type="text" class="form-control input-brutus" id="input1-5" name="correo" required>
-                        <span class="tooltip-text">Campo requerido</span>
+                    <div class="col-lg-6 mb-3">
+                        <label class="form-label">
+                            Correo Electrónico:
+                            <input type="text" class="input-brutus" name="correo" maxlength="40" required>
+                        </label>
+                        <div class="validation-msg">Campo requerido</div>
                     </div>
 
                 <h3 class="bg-secondary text-white px-3 py-1 text-center">Ubicación Administrativa</h3>
@@ -118,7 +122,6 @@
                     </div>
                     <div class="col-lg-4 mb-3 tooltip-custom">
                         <label for="input2-6" class="form-label">Estado:</label>
-                        <!-- <input type="text" class="form-control input-indigo" id="input2-6" name="estado_id"> -->
     
                         <select class="form-select input-indigo" id="input2-6" name="estado_id" required>
                             <option selected value="">Seleccione</option>
@@ -1042,7 +1045,7 @@
     <?php include_once '../../assets/php/footer.php'; ?>
 
     <script>
-        document.querySelector('.ver-general').classList.add('active')
+        document.querySelector('.registro').classList.add('active')
 
         const user = JSON.parse(localStorage.getItem('inm-user'))
 
