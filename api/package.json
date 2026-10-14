@@ -1,0 +1,19 @@
+{
+  "name": "api-diagnostico",
+  "version": "1.0.0",
+  "description": "api parael sistema de instrumento de diagnostico",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "node --watch ./src/index.js"
+  },
+  "author": "Nicolas",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.1.0",
+    "pg": "^8.13.1"
+  }
+}
