@@ -1,16 +1,12 @@
-import {HOSTNAME} from '../const/api.js';
-
-const showPass = () =>{
+const showPass = () => {
     const eye = document.querySelector('.eye')
     const pass = document.getElementById('pass')
 
     if (eye.classList.contains('bi-eye-fill')) {
-        eye.classList.remove('bi-eye-fill')
-        eye.classList.add('bi-eye-slash-fill')
+        eye.classList.replace('bi-eye-fill', 'bi-eye-slash-fill')
         pass.type = 'text'
     } else {
-        eye.classList.remove('bi-eye-slash-fill')
-        eye.classList.add('bi-eye-fill')
+        eye.classList.replace('bi-eye-slash-fill', 'bi-eye-fill')
         pass.type = 'password'
     }
 }
@@ -24,7 +20,7 @@ const verification = async () => {
         const pass = $("#pass").val()
         const check = document.getElementById("check").checked
 
-        const response = await fetch(`${HOSTNAME}/auth/`, {
+        const response = await fetch(`/api/auth/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -35,36 +31,32 @@ const verification = async () => {
         const res = await response.json();
 
         if (res.data) {
-            $("#alert").removeClass('msg-danger');
-            $("#alert").addClass('msg-success');
-            $("#alert").html('Iniciando sesión...');
+            $("#alert").removeClass('danger');
+            $("#msg-alert").html('Iniciando sesión. . .');
             $("#alert").removeClass('d-none');
             const rol = res.rol
             localStorage.setItem('inm-user', JSON.stringify({ user, pass, check, rol }))
-            location.href = './page/registro'
-            // console.log(res.rol)
+            setInterval(() => {
+                location.href = './page/registro'
+            }, 1000);
         } else {
-            $("#alert").removeClass('msg-success');
-            $("#alert").addClass('msg-danger');
-            $("#alert").html(res.error);
+            $("#alert").addClass('danger');
+            $("#msg-alert").html(res.error);
             $("#alert").removeClass('d-none');
             btn.disabled = false
             btn.innerHTML = 'Ingresar'
-            // setTimeout(() => {
-            //     $("#alert").addClass('d-none');
-            // }, 3000);
-            // console.log(res);
         }
-        // const data = res.data
 
     } catch (error) {
-        $("#alert").removeClass('msg-success');
-        $("#alert").addClass('msg-danger');
-        $("#alert").html('No se logro conectar con el servidor');
+        $("#alert").addClass('danger');
+        $("#msg-alert").html('No se logro conectar con el servidor');
         $("#alert").removeClass('d-none');
         btn.disabled = false
         btn.innerHTML = 'Ingresar'
         console.error('Error:', error);
+        setInterval(() => {
+            $("#alert").addClass('d-none');
+        }, 3000);
     }
 }
 
@@ -77,6 +69,6 @@ formulario.addEventListener('submit', function (e) {
 
 const show = document.getElementById('show');
 
-show.addEventListener('click', () =>{
+show.addEventListener('click', () => {
     showPass()
 });

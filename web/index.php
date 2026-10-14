@@ -38,8 +38,9 @@
 
     <main>
         <form id="login" class="login">
-            <div id="alert" class="mx-3 msg msg-danger brutus-light text-center d-none" role="alert">
-                <!-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. -->
+            <div id="alert" class="mx-3 msg danger text-center d-none" role="alert">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <span id="msg-alert"></span>
             </div>
 
             <article>
@@ -59,7 +60,8 @@
 
             <article class="form-check">
                 <input type="checkbox" class="form-check-input check-secundario" id="check" value="hola">
-                <label class="form-check-label cursor-pointer user-select-none" for="check">Mantener sesión activa</label>
+                <label class="form-check-label cursor-pointer user-select-none" for="check">Mantener sesión
+                    activa</label>
             </article>
 
             <button id="btn-submit" type="submit" class="btn-brutus btn-primario">Ingresar</button>

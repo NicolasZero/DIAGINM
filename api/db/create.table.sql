@@ -1,4 +1,3 @@
---version 4
 CREATE TABLE usuarios (
     id integer NOT NULL UNIQUE GENERATED ALWAYS AS IDENTITY (START WITH 1),
     username varchar NOT NULL UNIQUE,

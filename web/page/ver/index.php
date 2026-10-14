@@ -7,43 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instrumento de Diagnostico</title>
     <!-- icon -->
-    <link rel="icon" href="../../assets/img/logo_Inamujer.png" type="image/x-png">
+    <link rel="icon" href="/web/assets/img/logo_Inamujer.png" type="image/x-png">
 
     <!-- loader -->
-    <link rel="stylesheet" href="../../assets/css/loader.css">
+    <link rel="stylesheet" href="/web/assets/css/loader.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/web/assets/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/web/assets/icons/bootstrap-icons.min.css">
 
     <!-- datatables -->
-    <link rel="stylesheet" href="../../assets/css/bootstrap/datatables.min.css">
-    <link rel="stylesheet" href="../../assets/css/bootstrap/datatables.buttons.css">
+    <link rel="stylesheet" href="/web/assets/css/bootstrap/datatables.min.css">
+    <link rel="stylesheet" href="/web/assets/css/bootstrap/datatables.buttons.css">
 
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="../../assets/css/table.css">
+    <link rel="stylesheet" href="/web/assets/css/main.css">
+    <link rel="stylesheet" href="/web/assets/css/table.css">
 
     <!-- JS -->
-    <script src="../../assets/js/helpers/jspdf_v2.5.1.min.js"></script>
-    <script src="../../assets/js/bootstrap/bootstrap.min.js"></script>
-    <script src="../../assets/js/helpers/jquery.min.js"></script>
+    <script src="/web/assets/js/helpers/jspdf_v2.5.1.min.js"></script>
+    <script src="/web/assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/web/assets/js/helpers/jquery.min.js"></script>
 
     <!-- datatables -->
-    <script src="../../assets/js/bootstrap/datatables.min.js"></script>
-    <script src="../../assets/js/bootstrap/dataTables.buttons.js"></script>
-    <script src="../../assets/js/bootstrap/buttons.dataTables.js"></script>
-    <script src="../../assets/js/bootstrap/datatable.jszip.v3.10.1.min.js"></script>
-    <script src="../../assets/js/bootstrap/datatable.html5.v3.2.0.js"></script>
+    <script src="/web/assets/js/bootstrap/datatables.min.js"></script>
+    <script src="/web/assets/js/bootstrap/dataTables.buttons.js"></script>
+    <script src="/web/assets/js/bootstrap/buttons.dataTables.js"></script>
+    <script src="/web/assets/js/bootstrap/datatable.jszip.v3.10.1.min.js"></script>
+    <script src="/web/assets/js/bootstrap/datatable.html5.v3.2.0.js"></script>
 
     <script>
         if (!localStorage.getItem('inm-user')) {
-            location.replace("../../")
+            location.replace("/web/")
         } else {
             const user = JSON.parse(localStorage.getItem('inm-user'))
             if (user.rol != "administrador") {
-                location.replace("../registro")
+                location.replace("/web/registro")
             }
-            $(window).on('load', function() {
+            $(window).on('load', function () {
                 $(".loader-page").css({
                     visibility: "hidden",
                     opacity: "0"
@@ -56,12 +56,10 @@
 <body class="bg-indigo text-black">
     <span class="loader-page"></span>
 
-    <?php 
-        $ruta = '../../';
-        // header
-        include_once '../../assets/php/header.php';
-        // navbar
-        include_once '../../assets/php/nav.php'; 
+    <?php
+    $ruta = '../../';
+    include_once '../../assets/php/header.php';
+    include_once '../../assets/php/nav.php';
     ?>
 
     <main>
@@ -84,11 +82,17 @@
     <script type="module">
         import {
             getData
-        } from "../../assets/js/controllers/ver.registro.js";
+        } from "/web/assets/js/controllers/ver.registro.js";
 
-        $(window).on('load', function() {
+        $(window).on('load', function () {
             getData()
         });
+
+        document.querySelector('.ver-general').classList.add('active')
+
+        const user = JSON.parse(localStorage.getItem('inm-user'))
+
+        if (user.rol == "administrador") document.querySelector('#link-tablas').classList.remove('d-none');
     </script>
 </body>
 

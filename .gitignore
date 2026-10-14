@@ -11,5 +11,6 @@ logs/
 # apache
 .htaccess
 
-# other files
-api_node/
+# node
+.env
+node_modules/
