@@ -1,22 +1,21 @@
 import handleExportPDF from "../helpers/exportPDF.js";
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('#myform')
-        if(!form) {
-            console.error('Form not found');
-            return;
-        }
-    form.addEventListener('submit', function(e) {
+    if (!form) {
+        console.error('Form not found');
+        return;
+    }
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
         const values = {};
         const data = new FormData(form);// form data
-         for (const [key, value] of data) {
+        for (const [key, value] of data) {
             values[key] = value;
-         }
+        }
 
         sendForm(values);
         // handleExportPDF(values);
-
     });
 });
 
@@ -24,7 +23,7 @@ const sendForm = async (data) => {
     // console.log(data)
     try {
         data.key = "n1c0145"
-        const response = await fetch('http://localhost:3000/registro/', {
+        const response = await fetch('/api/registro/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,8 +33,8 @@ const sendForm = async (data) => {
         const json = await response.json();
         if (!json.data) {
             console.log('Error:', json.error);
-            
-        }else{
+
+        } else {
             handleExportPDF(data);
             $("#alert").removeClass('d-none');
             $("html, body").animate({ scrollTop: 0 }, 600);

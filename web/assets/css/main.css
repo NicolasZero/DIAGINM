@@ -5,12 +5,8 @@
 
     --color-secundario: #d63384;
     --color-secundario-hover: #801f4f;
-    --color-secundario-light:
-        #efadce
-        /* #f7d6e6 */
-    ;
+    --color-secundario-light: #efadce;
 
-    /* exito */
     --color-success: #309f6f;
     --color-success-hover: #227e56;
     --color-success-light: #56ff9a;
@@ -18,8 +14,8 @@
     --color-main: #eee9e9;
     --box-shadow-light: rgb(186 159 193);
     --box-shadow-dark: rgba(0, 0, 0, 0.3);
-
 }
+
 
 /*  Footer abajo */
 html {
@@ -117,7 +113,7 @@ a.btn-brutus {
 }
 
 .input-brutus {
-    border: none;
+    border: none !important;
     border-radius: 0;
     padding: 0.5rem 1rem;
     box-shadow: 10px 10px 0px 0px var(--box-shadow-light);
@@ -131,6 +127,11 @@ a.btn-brutus {
 .input-brutus:focus {
     outline: 0;
     box-shadow: none;
+}
+
+.input-brutus.select-brutus {
+    width: 100%;
+
 }
 
 /* ========== Alerts ========== */

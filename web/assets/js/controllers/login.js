@@ -43,17 +43,17 @@ const verification = async () => {
             $("#alert").addClass('danger');
             $("#msg-alert").html(res.error);
             $("#alert").removeClass('d-none');
-            btn.disabled = false
-            btn.innerHTML = 'Ingresar'
         }
 
     } catch (error) {
         $("#alert").addClass('danger');
         $("#msg-alert").html('No se logro conectar con el servidor');
         $("#alert").removeClass('d-none');
+        console.error('Error:', error);
+
+    } finally {
         btn.disabled = false
         btn.innerHTML = 'Ingresar'
-        console.error('Error:', error);
         setInterval(() => {
             $("#alert").addClass('d-none');
         }, 3000);

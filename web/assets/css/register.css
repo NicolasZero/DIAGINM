@@ -8,58 +8,54 @@
     /* padding: 1rem .5rem; */
 }
 
-.register > section{
+.register fieldset {
     background-color: var(--color-main);
     box-shadow: 13px 13px 0px 0px rgba(0, 0, 0, 0.3);
-    margin: 15px auto;
+    margin: 2rem auto;
 }
 
-.register h2{
+.register fieldset div {
+    padding: 0 1rem;
+}
+
+.register h2,
+.register h3 {
+    padding: 0 10px;
+}
+
+.register h2 {
     background-color: var(--color-secundario);
     color: #fff;
-    padding: 5px ;
-    /* margin: 0; */
-    /* padding: 0.5rem; */
 }
 
-.register h3{
-    /* background-color: var(--color-primario-light); */
+.register h3 {
     color: var(--color-primario);
 }
 
-.register section label{
+.register fieldset label {
     color: var(--color-primario-hover);
 }
 
-/* input[type="text"]:invalid:not(:focus),
-input[type="email"]:invalid:not(:focus) */
-/* input[type="text"]:invalid:focus,
-input[type="email"]:invalid:focus
-{
-    background-color: var(--color-secundario-light);
-    border: 1px solid var(--color-secundario-hover)
-} */
-
-.register section label input,
-.register section label{
+.register fieldset label input,
+.register fieldset label {
     width: 100%;
 }
 
-.register section label:has(:invalid:focus) input{
+.register.validate fieldset label:has(:invalid) input {
     background-color: var(--color-secundario-light);
     border: 1px solid var(--color-secundario-hover)
 }
 
-.register section label:has(:invalid:focus){
+.register.validate fieldset label:has(:invalid) {
     color: var(--color-secundario-hover);
 }
 
-.validation-msg{
+.validation-msg {
     padding: .5rem;
     color: var(--color-secundario-hover);
     display: none;
 }
 
-.register section label:has(:invalid:focus) + .validation-msg{
+.register.validate fieldset label:has(:invalid)+.validation-msg {
     display: block;
 }

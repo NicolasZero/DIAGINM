@@ -35,22 +35,7 @@
     <script src="/web/assets/js/bootstrap/datatable.jszip.v3.10.1.min.js"></script>
     <script src="/web/assets/js/bootstrap/datatable.html5.v3.2.0.js"></script>
 
-    <script>
-        if (!localStorage.getItem('inm-user')) {
-            location.replace("/web/")
-        } else {
-            const user = JSON.parse(localStorage.getItem('inm-user'))
-            if (user.rol != "administrador") {
-                location.replace("/web/registro")
-            }
-            $(window).on('load', function () {
-                $(".loader-page").css({
-                    visibility: "hidden",
-                    opacity: "0"
-                })
-            });
-        }
-    </script>
+    <script type="module" src="/web/assets/js/controllers/validation.role.js"></script>
 </head>
 
 <body class="bg-indigo text-black">
@@ -65,9 +50,14 @@
     <main>
         <section class="table-box">
             <h2 class="px-3 pt-3 m-0 text-center fw-normal">Tabla de registros generales</h2>
-
             <div class="row mx-3 py-3 overflow-auto">
-                <table id="example" class="table table-hover"></table>
+                <table id="example" class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td class="text-center py-3" colspan="5">Cargando...</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
